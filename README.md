@@ -12,8 +12,10 @@ Sorting using a mixed order collating sequence not linguistic sorting.  Keywords
 
          3. Could do it with proc reprort and substr function in formats (not shown)
          4. Proc sort groupformat does not work (Bug?)
-         
-             github
+                 
+         see additional Mark Keintz solution on end
+        
+    github
     https://tinyurl.com/y99dvfqc
     https://github.com/rogerjdeangelis/utl_sorting_using_a_mixed_order_collating_sequence_not_supported_in_sas
 
@@ -145,4 +147,51 @@ Sorting using a mixed order collating sequence not linguistic sorting.  Keywords
              by input(substr(as,2),best.)
        ;quit;
     ');
+
+
+    *__  __            _
+    |  \/  | __ _ _ __| | __
+    | |\/| |/ _` | '__| |/ /
+    | |  | | (_| | |  |   <
+    |_|  |_|\__,_|_|  |_|\_\
+
+    ;
+    Keintz, Mark
+
+    options validvarname=upcase;
+    libname sd1 "d:/sd1";
+    data sd1.have;
+      input as $;
+    cards4;
+    A2
+    A22
+    A222
+    A1
+    A11
+    A111
+    ;;;;
+    run;quit;
+
+    data vneed/view=vneed;
+      set sd1.have;
+      length _t1 $1 _t2 $8;
+      _t1=as;
+      _t2=right(substr(as,2));
+    run;
+
+    proc sort data=vneed out=want (drop=_:) ;
+      by _: ;
+    run;
+
+    WORK.WANT total obs=6
+
+        AS
+
+       A1
+       A2
+       A11
+       A22
+       A111
+       A222
+
 

@@ -12,6 +12,18 @@ Sorting using a mixed order collating sequence not linguistic sorting.  Keywords
 
          3. Could do it with proc reprort and substr function in formats (not shown)
          4. Proc sort groupformat does not work (Bug?)
+         
+             github
+    https://tinyurl.com/y99dvfqc
+    https://github.com/rogerjdeangelis/utl_sorting_using_a_mixed_order_collating_sequence_not_supported_in_sas
+
+    see StackOverflow
+    https://tinyurl.com/ycte2bxf
+    https://stackoverflow.com/questions/51106764/homogenize-use-of-single-and-double-digit-numbers-in-string
+
+    Jaap profile
+    https://stackoverflow.com/users/2204410/jaap
+
 
     HAVE
     ====

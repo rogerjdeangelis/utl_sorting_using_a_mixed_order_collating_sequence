@@ -1,4 +1,4 @@
-# utl_sorting_using_a_mixed_order_collating_sequence_not_supported_in_sas
+# utl_sorting_using_a_mixed_order_collating_sequence
 Sorting using a mixed order collating sequence not linguistic sorting.  Keywords: sas sql join merge big data analytics macros oracle teradata mysql sas communities stackoverflow statistics artificial inteligence AI Python R Java Javascript WPS Matlab SPSS Scala Perl C C# Excel MS Access JSON graphics maps NLP natural language processing machine learning igraph DOSUBL DOW loop stackoverflow SAS community.
 
     Sorting using a mixed order collating sequence not linguistic sorting
@@ -7,6 +7,7 @@ Sorting using a mixed order collating sequence not linguistic sorting.  Keywords
 
          1. WPS Proc R
          2. WPS/SAS proc sql
+         3. Arthur Tabachneck <art@ANALYSTFINDER.COM> see SAS solution on end
 
        Possible other methods (not shown)
 
@@ -193,5 +194,29 @@ Sorting using a mixed order collating sequence not linguistic sorting.  Keywords
        A22
        A111
        A222
+
+
+    Arthur Tabachneck <art@ANALYSTFINDER.COM>
+
+    data have;
+      input type $;
+      cards;
+    B2
+    B22
+    B222
+    B1
+    B11
+    B111
+    A2
+    A22
+    A222
+    A1
+    A11
+    A111
+    ;
+
+    proc sort data=have SORTSEQ=LINGUISTIC(NUMERIC_COLLATION=ON) out=want;
+      by type;
+    run;
 
 

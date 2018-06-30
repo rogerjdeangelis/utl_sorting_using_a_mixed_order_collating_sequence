@@ -4,6 +4,8 @@ Sorting using a mixed order collating sequence not linguistic sorting
 
      1. WPS Proc R
      2. WPS/SAS proc sql
+     3. SAS - SORTSEQ=LINGUISTIC(NUMERIC_COLLATION=ON) (see Art on end)
+
 
    Possible other methods (not shown)
 
@@ -190,4 +192,27 @@ WORK.WANT total obs=6
    A111
    A222
 
+
+Arthur Tabachneck <art@ANALYSTFINDER.COM>
+
+data have;
+  input type $;
+  cards;
+B2
+B22
+B222
+B1
+B11
+B111
+A2
+A22
+A222
+A1
+A11
+A111
+;
+
+proc sort data=have SORTSEQ=LINGUISTIC(NUMERIC_COLLATION=ON) out=want;
+  by type;
+run;
 

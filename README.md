@@ -1,0 +1,2 @@
+# utl_sorting_using_a_mixed_order_collating_sequence_not_supported_in_sas
+Sorting using a mixed order collating sequence not linguistic sorting.  Keywords: sas sql join merge big data analytics macros oracle teradata mysql sas communities stackoverflow statistics artificial inteligence AI Python R Java Javascript WPS Matlab SPSS Scala Perl C C# Excel MS Access JSON graphics maps NLP natural language processing machine learning igraph DOSUBL DOW loop stackoverflow SAS community.
